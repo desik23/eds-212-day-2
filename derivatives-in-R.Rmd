@@ -110,12 +110,12 @@ ggplot(data = penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
 
 ```{r}
 
-ggplot(data = penguins, aes(x = bill_length_mm, y = bill_depth_mm)) + 
-  geom_jitter(aes(species, flipper_length_mm)) + 
+ggplot(data = penguins, aes(x = species, y = flipper_length_mm)) + 
+  geom_jitter(aes(color = species)) + 
   scale_color_manual(values = c("purple", "green","red")) +
   labs(x = "Species", y = "Flipper length (mm)", 
        title = "Palmer penguins flipper length by species", 
-       caption = "Data   collected by KB Gorman et al. at Palmer Station", color = "Species") +
+       caption = "Data  collected by KB Gorman et al. at Palmer Station", color = "Species") +
   theme_light()
 
 ```
