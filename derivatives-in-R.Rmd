@@ -92,7 +92,7 @@ ggplot(data = NULL) + stat_function(fun = fx_section4) + xlim(-0.5,0.5)
 
 ```
 
-### Basic ggplot scatterplot of body mass (y) and flipper length (x)
+### Basic ggplot scatterplot of bill mass (y) and bill length (x)
 
 ```{r}
 
@@ -101,6 +101,20 @@ ggplot(data = penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
   scale_color_manual(values = c("purple", "green","red")) +
   labs(x = "Bill length (mm)", y = "Bill depth (mm)", 
        title = "Palmer penguins bill size measurements", 
+       caption = "Data   collected by KB Gorman et al. at Palmer Station", color = "Species") +
+  theme_light()
+
+```
+
+### Basic ggplot jitterplot of bill mass (y) and bill length (x)
+
+```{r}
+
+ggplot(data = penguins, aes(x = bill_length_mm, y = bill_depth_mm)) + 
+  geom_jitter(aes(species, flipper_length_mm)) + 
+  scale_color_manual(values = c("purple", "green","red")) +
+  labs(x = "Species", y = "Flipper length (mm)", 
+       title = "Palmer penguins flipper length by species", 
        caption = "Data   collected by KB Gorman et al. at Palmer Station", color = "Species") +
   theme_light()
 
