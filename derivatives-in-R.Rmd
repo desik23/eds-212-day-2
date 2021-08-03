@@ -15,7 +15,7 @@ library(palmerpenguins)
 
 ## First Order Univariate Derivatives
 
-#A.
+# A.
 
 ```{r}
 
@@ -29,7 +29,7 @@ eval(df_dx)
 
 ```
 
-#B.
+# B.
 
 ```{r}
 
@@ -43,7 +43,7 @@ eval(p_da)
 
 ```
 
-#C.
+# C.
 
 ```{r}
 
@@ -56,4 +56,35 @@ t <- 0
 eval(g_dt)
 
 ```
+# Higher order univariate derivatives:
 
+```{r}
+gz <- expression(4.6 - (1.9*(z^3)))
+
+g_dz <- D(expr = gz,name ="z")
+
+g_d2z <- D(expr = g_dz,name ="z")
+
+```
+
+
+# Partial Derivatives 
+
+```{r}
+fxyz <- expression((2*(x^2)*y) - (3*x) + 1 + (4*(z^4)*x))
+
+f_dx <- D(expr = fxyz,name ="x")
+
+f_dy <- D(expr = fxyz,name ="y")
+
+f_dz <- D(expr = fxyz,name ="z")
+
+```
+
+
+```{r}
+fx <- expression((2.4*(exp(-0.05*x)) * sin(x)))
+
+ggplot(data = NULL) + xlim(-0.5,0.5)
+
+```
